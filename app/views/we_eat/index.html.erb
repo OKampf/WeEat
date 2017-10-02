@@ -1,15 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Your Pragmatic Catalog</h1>
+<h1>We Eat</h1>
 
-<% cache @restaurants do %>
-  <% @restaurants.each do |restaurant| %>
-    <% cache restaurant do %>
-      <div class="entry">
-        <h3><%= restaurant.name %></h3>
-        <label for="rating_paragraph">Rating</label>
-        <p id="rating_paragraph"><%= restaurant.rating %></p>
-      </div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rating</th>
+      <th>Accepts 10bis</th>
+      <th>Address</th>
+      <th>Max Delivery Time</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+    <tr>
+      <td><%= restaurant.name %></td>
+      <td><%= restaurant.rating %></td>
+      <td><%= restaurant.accept_10bis %></td>
+      <td><%= restaurant.address %></td>
+      <td><%= restaurant.max_delivery_time %></td>
+      <td><%= link_to 'Show', restaurant %></td>
+    </tr>
     <% end %>
-  <% end %>
-<% end %>
+  </tbody>
+</table>
