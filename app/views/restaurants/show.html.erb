@@ -7,10 +7,11 @@
 <p><%= @restaurant.max_delivery_time %></p>
 
 <h3>Reviews</h3>
-<td><%= link_to 'Add Review', new_review_path(restaurant_id: @restaurant.id) %></td>
+<!-- <td><%= link_to 'Add Review', new_restaurant_review_path(restaurant_id: @restaurant.id) %></td> -->
+<td><%= link_to 'Add Review', new_restaurant_review_path(@restaurant) %></td>
 <hr>
 
-<% @reviews.each do |review| %>
+<% @restaurant.reviews.each do |review| %>
   <div >
     <p><%= review.reviewer %></p>
     <p><%= review.rating %></p>
@@ -20,4 +21,4 @@
 <% end %>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<%= link_to 'Back', we_eat_index_path %>

@@ -11,7 +11,6 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1.json
   def show
     @restaurant = Restaurant.find(params[:id])
-    @reviews = @restaurant.reviews
   end
 
   # GET /restaurants/new

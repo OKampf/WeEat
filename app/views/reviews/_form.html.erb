@@ -1,4 +1,4 @@
-<%= form_with(model: review, local: true) do |form| %>
+<%= form_with(model: review, local: true, url: restaurant_reviews_path) do |form| %>
   <% if review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -26,10 +26,6 @@
      <%= form.text_field :comment %>
   </div>
 
-  <div class="field">
-    <%= form.label :restaurant_id %>
-    <%= form.text_field :restaurant_id, :readonly => true %>
- </div>
 
   <div class="actions">
     <%= form.submit %>
