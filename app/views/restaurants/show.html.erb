@@ -7,7 +7,6 @@
 <p><%= @restaurant.max_delivery_time %></p>
 
 <h3>Reviews</h3>
-<!-- <td><%= link_to 'Add Review', new_restaurant_review_path(restaurant_id: @restaurant.id) %></td> -->
 <td><%= link_to 'Add Review', new_restaurant_review_path(@restaurant) %></td>
 <hr>
 
@@ -20,5 +19,5 @@
   </div>
 <% end %>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+ <!--<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> -->
 <%= link_to 'Back', we_eat_index_path %>
