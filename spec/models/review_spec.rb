@@ -21,13 +21,15 @@ RSpec.describe Review, type: :model do
   end
 
   describe '#update_restaurant_rating!' do
-    let(:restaurant) { FactoryGirl.create(:restaurant) }
-    let(:review1) { FactoryGirl.create(:review, restaurant: restaurant) }
-    let(:review2) { FactoryGirl.create(:review, restaurant: restaurant) }
+    let(:restaurant_with_reviews) { FactoryGirl.create(:restaurant_with_reviews) }
 
     it 'restaurant rating should valid' do
-      avg_ratings = ( review1.rating + review2.rating ) / 2.0
-      expect(restaurant.rating).to eq(avg_ratings)
+
+      rating_sum = restaurant_with_reviews.reviews.map(&:rating).sum
+      rating_count = restaurant_with_reviews.reviews.count.to_f
+
+      avg_ratings = rating_sum / rating_count
+      expect(restaurant_with_reviews.rating).to eq(avg_ratings)
 
     end
 

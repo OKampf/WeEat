@@ -8,12 +8,10 @@ class Review < ApplicationRecord
   after_destroy :update_restaurant_rating!
 
   def update_restaurant_rating!
-    rating_count = restaurant.reviews.count
-    rating_sum = 0.0
-    restaurant.reviews.each { |review|
-      rating_sum += review.rating
-    }
-    restaurant.rating = (rating_sum / rating_count.to_f)
+    rating_count = restaurant.reviews.count.to_f
+    # rating_sum = restaurant.reviews.reduce(0) { |sum, element| sum + element.rating }
+    rating_sum = restaurant.reviews.map(&:rating).sum
+    restaurant.rating = (rating_sum / rating_count)
     restaurant.save
   end
 
