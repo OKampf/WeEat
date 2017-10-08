@@ -5,16 +5,9 @@ RSpec.describe Restaurant, type: :model do
   describe '#create' do
 
     context 'create valid restaurant' do
-      let(:restaurant) { FactoryGirl.build(:restaurant) }
+      let(:restaurant) { FactoryGirl.create(:restaurant) }
       it 'has a valid cuisine' do
         expect(restaurant).to be_valid
-      end
-    end
-
-    context 'create a restaurant without a cuisine' do
-      let(:restaurant) { FactoryGirl.build(:restaurant, :invalid_cuisine) }
-      it 'does not have a valid cuisine' do
-        expect(restaurant).to_not be_valid
       end
     end
 
@@ -24,7 +17,6 @@ RSpec.describe Restaurant, type: :model do
         expect(restaurant).to_not be_valid
       end
     end
-
 
   end
 

@@ -13,7 +13,7 @@ class Review < ApplicationRecord
     restaurant.reviews.each { |review|
       rating_sum += review.rating
     }
-    restaurant.rating = rating_sum / rating_count
+    restaurant.rating = (rating_sum / rating_count.to_f)
     restaurant.save
   end
 

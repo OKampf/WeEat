@@ -1,20 +1,16 @@
 FactoryGirl.define do
   factory :restaurant do
-    id 1
-    name 'Restaurant Name 1'
-    rating 2
+    name FFaker::Company.name
+    rating nil
     accept_10bis true
-    address 'Restaurant Address 1'
+    address FFaker::Address.street_address
     max_delivery_time 30
-    cuisine {create(:cuisine)}
+
+    association :cuisine, factory: :cuisine
   end
 
   trait :invalid_max_delivery_time do
     max_delivery_time 0
-  end
-
-  trait :invalid_cuisine do
-    cuisine {}
   end
 
 end
