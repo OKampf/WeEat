@@ -1,4 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.rating %></p>
+<p><%= @restaurant.accept_10bis %></p>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.max_delivery_time %></p>
+
+<h3>Reviews</h3>
+<td><%= link_to 'Add Review', new_restaurant_review_path(@restaurant) %></td>
+<hr>
+
+<% @restaurant.reviews.each do |review| %>
+  <div >
+    <p><%= review.reviewer %></p>
+    <p><%= review.rating %></p>
+    <p><%= review.comment %></p>
+    <hr>
+  </div>
+<% end %>
+
+ <!--<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> -->
+<%= link_to 'Back', we_eat_index_path %>
