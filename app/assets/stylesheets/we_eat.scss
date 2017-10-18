@@ -1,3 +1,41 @@
 // Place all the styles related to the WeEat controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.we-eat{
+
+  height: 100%;
+  width: 100%;
+
+  .header{
+    height: 20%;
+    width: 100%;
+    background-image: url("header.jpg");
+    background-size: cover;
+    font-size: 80px;
+    margin: 10px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .filters-panel{
+  }
+
+  .restaurants-sidebar{
+    float: left;
+    width: 30%;
+    overflow: auto;
+    max-height: 80vh;
+  }
+
+  .middle{
+    height: 60%;
+    background-color: green;
+  }
+
+  .footer{
+    height: 20%;
+    background-color: yellow;
+  }
+
+}

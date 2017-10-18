@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: reviews
+#
+#  id            :integer          not null, primary key
+#  reviewer      :string
+#  rating        :integer
+#  comment       :text
+#  restaurant_id :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
 FactoryGirl.define do
 
   factory :review do

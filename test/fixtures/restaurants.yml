@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: restaurants
+#
+#  id                :integer          not null, primary key
+#  name              :string
+#  rating            :decimal(8, 2)
+#  accept_10bis      :boolean
+#  address           :string
+#  max_delivery_time :integer
+#  cuisine_id        :integer
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined. If you add columns to the

@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: reviews
+#
+#  id            :integer          not null, primary key
+#  reviewer      :string
+#  rating        :integer
+#  comment       :text
+#  restaurant_id :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
 class Review < ApplicationRecord
   belongs_to :restaurant
   validates :reviewer, :rating, :comment, presence: true
