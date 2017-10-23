@@ -6,14 +6,10 @@
   border-radius: 5px; /* 5px rounded corners */
 
   padding: 2px 16px;
-  margin: 10px;
+  margin: 20px;
 
-  /* 10 Bis Icon */
-  .icon-10bis {
-    content: url(10bis.png);
-    margin: 5px;
-    height: 20px;
-    width: 20px;
+  .row {
+    display: block;
   }
 
   .restaurant-name{
@@ -26,22 +22,17 @@
     font-family: ef_cuisinesregular;
     font-size: 50px;
     margin: 10px;
-    display: inline-block;
+
     float: left;
     vertical-align: middle;
   }
 
-  .golden-star gray-star {
-    width: 20px;
+  /* 10 Bis Icon */
+  .icon-10bis {
+    content: url(10bis.png);
+    margin: 5px;
     height: 20px;
-  }
-
-  .golden-star{
-    color: gold;
-  }
-
-  .gray-star{
-    color: gray;
+    width: 20px;
   }
 
 }

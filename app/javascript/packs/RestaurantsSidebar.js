@@ -48,7 +48,7 @@ export default class RestaurantsSideBar extends React.Component {
         });
 
         return (
-            <div>
+            <div class="restaurants-sidebar">
                 {restaurantsList}
             </div>
         );

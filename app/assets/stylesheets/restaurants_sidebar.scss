@@ -1,0 +1,11 @@
+// Place all the styles related to the RestaurantsSidebar controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.restaurants-sidebar {
+  float: left;
+  width: 30%;
+  overflow: auto;
+  max-height: 80vh;
+}
+

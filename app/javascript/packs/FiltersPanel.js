@@ -8,7 +8,7 @@ export default class FiltersPanel extends React.Component{
         this.state = {
             filterCuisine: "",
             filterMinRating: 0,
-            filterMaxDeliveryTime: 240,
+            filterMaxDeliveryTime: "",
         }
     }
 

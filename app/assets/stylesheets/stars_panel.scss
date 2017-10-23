@@ -1,0 +1,27 @@
+.stars-panel {
+
+  float: right;
+  vertical-align: middle;
+
+  .golden-star gray-star {
+    width: 20px;
+    height: 20px;
+  }
+
+  .golden-star{
+    color: gold;
+  }
+
+  .gray-star{
+    color: gray;
+  }
+
+}
+
+/* On mouse-over, add a deeper shadow */
+.restaurant-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+

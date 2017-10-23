@@ -1,6 +1,7 @@
 import React from 'react';
-import { Header } from './Header.js'
-import RestaurantsSideBar from './restaurants_sidebar.jsx'
+import {Header} from './Header.js'
+import {Map} from './Map.js'
+import RestaurantsSideBar from './RestaurantsSidebar.js'
 import FiltersPanel from "./FiltersPanel";
 
 export default class WeEat extends React.Component {
@@ -13,7 +14,7 @@ export default class WeEat extends React.Component {
             restaurants: [],
             filterCuisine: "",
             filterMinRating: 0,
-            filterMaxDeliveryTime: 240
+            filterMaxDeliveryTime: ""
         };
 
         this.updateFilters = this.updateFilters.bind(this);
@@ -31,8 +32,8 @@ export default class WeEat extends React.Component {
             })
             .then(restaurants => {
                 this.setState({
-                        restaurants: restaurants
-                    });
+                    restaurants: restaurants
+                });
             });
     }
 
@@ -48,8 +49,7 @@ export default class WeEat extends React.Component {
             });
     }
 
-    updateFilters(filterName, filterValue)
-    {
+    updateFilters(filterName, filterValue) {
         this.setState({[filterName]: filterValue});
     }
 
@@ -57,30 +57,18 @@ export default class WeEat extends React.Component {
         return (
             <div className="we-eat">
 
-                <header className="header">
-                    <Header/>
-                </header>
+                <Header/>
 
-                <div className="middle">
+                <FiltersPanel cuisines={this.state.cuisines} onFilterChange={this.updateFilters}/>
 
-                    <div>
-                        <FiltersPanel cuisines={this.state.cuisines} onFilterChange={this.updateFilters}/>
-                    </div>
+                <Map/>
 
-                    <div className="restaurants-sidebar">
-                        <RestaurantsSideBar
-                            restaurants={this.state.restaurants}
-                            filterCuisine={this.state.filterCuisine}
-                            filterMinRating={this.state.filterMinRating}
-                            filterMaxDeliveryTime={this.state.filterMaxDeliveryTime}
-                        />
-                    </div>
-
-                </div>
-
-                <footer className="footer">
-
-                </footer>
+                <RestaurantsSideBar
+                    restaurants={this.state.restaurants}
+                    filterCuisine={this.state.filterCuisine}
+                    filterMinRating={this.state.filterMinRating}
+                    filterMaxDeliveryTime={this.state.filterMaxDeliveryTime}
+                />
 
             </div>
         );

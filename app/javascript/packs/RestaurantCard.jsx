@@ -1,6 +1,6 @@
 import React from 'react'
-import { cuisineFontMapper } from './cuisineFontMapper'
-import StarsPanel from './stars_panel'
+import {cuisineFontMapper} from './cuisineFontMapper'
+import StarsPanel from './StarsPanel'
 
 
 export default class RestaurantCard extends React.Component {
@@ -12,20 +12,25 @@ export default class RestaurantCard extends React.Component {
     render() {
         const restaurant = this.props.restaurant;
         return (
-            <div className="restaurant-card">
+            <div className='restaurant-card'>
 
-                <div>
-                    <p className='cuisine-font'>{cuisineFontMapper[restaurant.cuisine.name]}</p>
-                    <p className='restaurant-name'>{restaurant.name}</p>
+                <div className='row'>
+                    <span className='cuisine-font'>{cuisineFontMapper[restaurant.cuisine.name]}</span>
+                    <span className='restaurant-name'>{restaurant.name}</span>
+                    <span><StarsPanel numTotal={3} numGolden={Math.floor(restaurant.rating)}/></span>
                 </div>
 
-                <p>{restaurant.address}</p>
-                <StarsPanel numTotal={3} numGolden={Math.floor(restaurant.rating)}/>
-                { restaurant.accept_10bis && (
-                    <img className="icon-10bis"/>
-                ) }
-                <p>{restaurant.rating}</p>
-                <p>Max Delivery Time: {restaurant.max_delivery_time} Minutes</p>
+                <div className='row'>
+                    <span className='address'>{restaurant.address}</span>
+                </div>
+
+                <div className='row'>
+                    <span class="max-delivery-time">Max Delivery Time: {restaurant.max_delivery_time} Minutes</span>
+
+                    {restaurant.accept_10bis && (
+                        <span><img className="icon-10bis"/></span>
+                    )}
+                </div>
             </div>
         );
     }

@@ -1,5 +1,4 @@
 import React from 'react'
-import Star from './star.jsx'
 
 export default class StarsPanel extends React.Component{
 
@@ -14,7 +13,7 @@ export default class StarsPanel extends React.Component{
         {
             stars.push(1);
         }
-        for(let i=stars.length; i<3;i++)
+        for(let i=stars.length; i<this.props.numTotal;i++)
         {
             stars.push(0);
         }
@@ -28,7 +27,7 @@ export default class StarsPanel extends React.Component{
         });
 
         return (
-            <div>
+            <div class="stars-panel">
                 {stars}
             </div>
         );
